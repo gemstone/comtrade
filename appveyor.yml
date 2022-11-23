@@ -1,4 +1,4 @@
-version: AppVeyor Gemstone GemTem Build {build}
+version: AppVeyor Gemstone COMTRADE Build {build}
 branches:
   only:
   - master
@@ -11,7 +11,7 @@ before_build:
 - cmd: >-
     choco install sandcastle
 
-    nuget restore src\Gemstone.GemTem.sln
+    nuget restore src\Gemstone.COMTRADE.sln
 build:
   parallel: true
   verbosity: minimal
