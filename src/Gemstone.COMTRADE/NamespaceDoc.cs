@@ -23,11 +23,11 @@
 
 using System.Runtime.CompilerServices;
 
-namespace Gemstone.GemTem
+namespace Gemstone.COMTRADE
 {
     /// <summary>
-    /// The <see cref="Gemstone.GemTem"/> namespace organizes all Gemstone library functionality
-    /// related to gemtem. The root gemtem namespace also includes common gemtem classes,
+    /// The <see cref="Gemstone.COMTRADE"/> namespace organizes all Gemstone library functionality
+    /// related to comtrade. The root comtrade namespace also includes common comtrade classes,
     /// e.g., <see cref="Class"/>.
     /// </summary>
     [CompilerGenerated]

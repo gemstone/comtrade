@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpKI>
   <HelpKINode Title="Class class">
-    <HelpKINode Title="Class Class" Url="html/T_Gemstone_GemTem_Class.htm" />
-    <HelpKINode Title="constructor" Url="html/M_Gemstone_GemTem_Class__ctor.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_Gemstone_GemTem_Class.htm" />
+    <HelpKINode Title="Class Class" Url="html/T_Gemstone_COMTRADE_Class.htm" />
+    <HelpKINode Title="constructor" Url="html/M_Gemstone_COMTRADE_Class__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_Gemstone_COMTRADE_Class.htm" />
   </HelpKINode>
-  <HelpKINode Title="Class.Class constructor" Url="html/M_Gemstone_GemTem_Class__ctor.htm" />
-  <HelpKINode Title="Gemstone.GemTem namespace" Url="html/N_Gemstone_GemTem.htm" />
-  <HelpKINode Title="Gemstone.GemTem.Class class" Url="html/T_Gemstone_GemTem_Class.htm" />
+  <HelpKINode Title="Class.Class constructor" Url="html/M_Gemstone_COMTRADE_Class__ctor.htm" />
+  <HelpKINode Title="Gemstone.COMTRADE namespace" Url="html/N_Gemstone_COMTRADE.htm" />
+  <HelpKINode Title="Gemstone.COMTRADE.Class class" Url="html/T_Gemstone_COMTRADE_Class.htm" />
   <HelpKINode Title="welcome">
     <HelpKINode Title="getting started, root, gemstone" Url="html/About.htm" />
   </HelpKINode>

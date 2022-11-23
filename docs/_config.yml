@@ -1,8 +1,8 @@
 theme: jekyll-theme-cayman
-title: Gemstone.GemTem
-description: GPA Gemstone GemTem Library
+title: Gemstone.COMTRADE
+description: GPA Gemstone COMTRADE Library
 github:
-  repository_name: gemstone/gemtem
+  repository_name: gemstone/comtrade
   owner_url: https://www.gridprotectionalliance.org
   owner_name: Grid Protection Alliance
 plugins:

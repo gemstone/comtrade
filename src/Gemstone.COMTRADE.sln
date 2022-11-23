@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gemstone.GemTem", "Gemstone.GemTem\Gemstone.GemTem.csproj", "{DC451A1B-3525-44D4-96C0-601CD98DD2C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gemstone.COMTRADE", "Gemstone.COMTRADE\Gemstone.COMTRADE.csproj", "{DC451A1B-3525-44D4-96C0-601CD98DD2C6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gemstone.GemTem.UnitTests", "UnitTests\Gemstone.GemTem.UnitTests.csproj", "{F797F0F0-1E2F-4E5A-BFC5-B3EB8192E566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gemstone.COMTRADE.UnitTests", "UnitTests\Gemstone.COMTRADE.UnitTests.csproj", "{F797F0F0-1E2F-4E5A-BFC5-B3EB8192E566}"
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "docgen", "DocGen\docgen.shfbproj", "{E0CCFF2A-C2DF-436C-B34C-A20215DA227A}"
 EndProject

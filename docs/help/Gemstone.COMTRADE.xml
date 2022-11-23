@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <doc>
   <assembly>
-    <name>Gemstone.GemTem</name>
+    <name>Gemstone.COMTRADE</name>
   </assembly>
   <members>
-    <member name="T:Gemstone.GemTem.Class">
+    <member name="T:Gemstone.COMTRADE.Class">
       <summary>
-            Sample class for new GemTem library.
+            Sample class for new COMTRADE library.
             </summary>
     </member>
-    <member name="M:Gemstone.GemTem.Class.#ctor">
+    <member name="M:Gemstone.COMTRADE.Class.#ctor">
       <summary>
         <markup>
           <include item="SMCAutoDocConstructor">
-            <parameter>Gemstone.GemTem.Class</parameter>
+            <parameter>Gemstone.COMTRADE.Class</parameter>
           </include>
         </markup>
       </summary>

@@ -4,21 +4,21 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;.net7.0</TargetFrameworks>
-    <RootNamespace>Gemstone.GemTem</RootNamespace>
-    <PackageId>Gemstone.GemTem</PackageId>
+    <RootNamespace>Gemstone.COMTRADE</RootNamespace>
+    <PackageId>Gemstone.COMTRADE</PackageId>
     <Authors>Grid Protection Alliance</Authors>
     <Company>Grid Protection Alliance</Company>
     <Product>Gemstone</Product>
-    <PackageDescription>GPA Gemstone GemTem Library</PackageDescription>
+    <PackageDescription>GPA Gemstone COMTRADE Library</PackageDescription>
     <PackageIcon>gemstone-square-128.png</PackageIcon>
-    <Description>GPA Gemstone GemTem Library</Description>
+    <Description>GPA Gemstone COMTRADE Library</Description>
     <Copyright>Copyright © 2022</Copyright>
     <PackageProjectUrl>https://github.com/gemstone</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/gemstone/gemtem</RepositoryUrl>
+    <RepositoryUrl>https://github.com/gemstone/comtrade</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageTags>GPA;Gemstone;library;gemtem</PackageTags>
+    <PackageTags>GPA;Gemstone;library;comtrade</PackageTags>
     <LangVersion>latest</LangVersion>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <Nullable>enable</Nullable>

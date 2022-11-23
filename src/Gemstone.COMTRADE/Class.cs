@@ -21,10 +21,10 @@
 //
 //******************************************************************************************************
 
-namespace Gemstone.GemTem
+namespace Gemstone.COMTRADE
 {
     /// <summary>
-    /// Sample class for new GemTem library.
+    /// Sample class for new COMTRADE library.
     /// </summary>
     public class Class
     {
