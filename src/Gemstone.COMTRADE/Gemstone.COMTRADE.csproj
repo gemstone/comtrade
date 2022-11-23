@@ -3,7 +3,7 @@
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.1;.net7.0</TargetFrameworks>
+    <TargetFrameworks>net7.0;netstandard2.1</TargetFrameworks>
     <RootNamespace>Gemstone.COMTRADE</RootNamespace>
     <PackageId>Gemstone.COMTRADE</PackageId>
     <Authors>Grid Protection Alliance</Authors>
