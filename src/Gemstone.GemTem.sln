@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gemstone.GemTem", "Gemstone.GemTem\Gemstone.GemTem.csproj", "{DC451A1B-3525-44D4-96C0-601CD98DD2C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gemstone.GemTem.UnitTests", "UnitTests\Gemstone.GemTem.UnitTests.csproj", "{F797F0F0-1E2F-4E5A-BFC5-B3EB8192E566}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "docgen", "DocGen\docgen.shfbproj", "{E0CCFF2A-C2DF-436C-B34C-A20215DA227A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{1B73EDFB-2410-4828-9835-FE353FC1C2BF}"
+	ProjectSection(SolutionItems) = preProject
+		..\docs\_config.yml = ..\docs\_config.yml
+		..\docs\README.md = ..\docs\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "help", "help", "{A4BCD348-D68F-4516-8555-CD60C904B420}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{DFC219B4-2CF1-49CC-B203-A0E1FF73E20A}"
+	ProjectSection(SolutionItems) = preProject
+		..\docs\img\favicon.ico = ..\docs\img\favicon.ico
+		..\docs\img\gemstone-square-1000.png = ..\docs\img\gemstone-square-1000.png
+		..\docs\img\gemstone-wide-600.png = ..\docs\img\gemstone-wide-600.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC451A1B-3525-44D4-96C0-601CD98DD2C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC451A1B-3525-44D4-96C0-601CD98DD2C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC451A1B-3525-44D4-96C0-601CD98DD2C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC451A1B-3525-44D4-96C0-601CD98DD2C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F797F0F0-1E2F-4E5A-BFC5-B3EB8192E566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F797F0F0-1E2F-4E5A-BFC5-B3EB8192E566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F797F0F0-1E2F-4E5A-BFC5-B3EB8192E566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F797F0F0-1E2F-4E5A-BFC5-B3EB8192E566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0CCFF2A-C2DF-436C-B34C-A20215DA227A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0CCFF2A-C2DF-436C-B34C-A20215DA227A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E0CCFF2A-C2DF-436C-B34C-A20215DA227A} = {A4BCD348-D68F-4516-8555-CD60C904B420}
+		{A4BCD348-D68F-4516-8555-CD60C904B420} = {1B73EDFB-2410-4828-9835-FE353FC1C2BF}
+		{DFC219B4-2CF1-49CC-B203-A0E1FF73E20A} = {1B73EDFB-2410-4828-9835-FE353FC1C2BF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A191CAE4-14B5-40B1-856F-1F9AF0C30E96}
+	EndGlobalSection
+EndGlobal

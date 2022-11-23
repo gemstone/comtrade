@@ -1,0 +1,17 @@
+version: AppVeyor Gemstone GemTem Build {build}
+branches:
+  only:
+  - master
+skip_tags: true
+image: Visual Studio 2022
+configuration: Release
+environment:
+  SHFBROOT: C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\
+before_build:
+- cmd: >-
+    choco install sandcastle
+
+    nuget restore src\Gemstone.GemTem.sln
+build:
+  parallel: true
+  verbosity: minimal

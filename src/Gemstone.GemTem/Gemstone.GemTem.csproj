@@ -1,0 +1,71 @@
+<Project>
+
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;.net7.0</TargetFrameworks>
+    <RootNamespace>Gemstone.GemTem</RootNamespace>
+    <PackageId>Gemstone.GemTem</PackageId>
+    <Authors>Grid Protection Alliance</Authors>
+    <Company>Grid Protection Alliance</Company>
+    <Product>Gemstone</Product>
+    <PackageDescription>GPA Gemstone GemTem Library</PackageDescription>
+    <PackageIcon>gemstone-square-128.png</PackageIcon>
+    <Description>GPA Gemstone GemTem Library</Description>
+    <Copyright>Copyright © 2022</Copyright>
+    <PackageProjectUrl>https://github.com/gemstone</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/gemstone/gemtem</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>GPA;Gemstone;library;gemtem</PackageTags>
+    <LangVersion>latest</LangVersion>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Version>1.0.86</Version>
+    <InformationalVersion Condition="'$(Configuration)'=='Release'">1.0.86 -- Release Build</InformationalVersion>
+    <InformationalVersion Condition="'$(Configuration)'!='Release'">1.0.86 -- Debug Build</InformationalVersion>
+    <Configurations>Debug;Release;Development</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputPath>..\..\build\$(Configuration)</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>..\..\build\$(Configuration)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Development'">
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\docs\img\gemstone-square-128.png" Link="gemstone-square-128.png" Visible="false">
+      <Pack>True</Pack>
+      <PackagePath />
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\common\src\Gemstone\Gemstone.Common.csproj" Condition="'$(Configuration)'=='Development'" />
+    <PackageReference Include="Gemstone.Common" Version="1.0.86" Condition="'$(Configuration)'!='Development'" />
+
+    <!-- <ProjectReference Include="..\..\..\expressions\src\Gemstone.Expressions\Gemstone.Expressions.csproj" Condition="'$(Configuration)'=='Development'" /> -->
+    <!-- <PackageReference Include="Gemstone.Expressions" Version="1.0.0" Condition="'$(Configuration)'!='Development'" /> -->
+
+    <!-- <ProjectReference Include="..\..\..\threading\src\Gemstone.Threading\Gemstone.Threading.csproj" Condition="'$(Configuration)'=='Development'" /> -->
+    <!-- <PackageReference Include="Gemstone.Threading" Version="1.0.0" Condition="'$(Configuration)'!='Development'" /> -->
+
+    <!-- <ProjectReference Include="..\..\..\numeric\src\Gemstone.Numeric\Gemstone.Numeric.csproj" Condition="'$(Configuration)'=='Development'" /> -->
+    <!-- <PackageReference Include="Gemstone.Numeric" Version="1.0.0" Condition="'$(Configuration)'!='Development'" /> -->
+  </ItemGroup>
+
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
+
+  <PropertyGroup Condition="'$(SIGNTOOL)' != ''">
+    <PostBuildEvent>$(SIGNTOOL) $(TargetPath)</PostBuildEvent>
+  </PropertyGroup>
+
+</Project>
