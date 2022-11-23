@@ -3,7 +3,9 @@
   <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
     <introduction>
       <para>
-        The Gemstone COMTRADE Library is a useful collection of open source classes and methods for comtrade.
+        The Gemstone COMTRADE Library is a useful collection of open source classes and methods for parsing and writing 
+        COMTRADE files. COMTRADE is standardized file format for exchanging transient power system data,
+        see IEEE C37.111 or IEC 60244-24 Ed.2.
       </para>
       <para>
         Return to
