@@ -3,7 +3,7 @@
 # COMTRADE
 ### GPA Gemstone Library
 
-The Gemstone COMTRADE Library organizes all Gemstone functionality related to comtrade.
+The Gemstone COMTRADE Library organizes all Gemstone functionality related to COMTARDE (IEEE C37.111).
 
 [![GitHub license](https://img.shields.io/github/license/gemstone/comtrade?color=4CC61E)](https://github.com/gemstone/comtrade/blob/master/LICENSE)
 [![Build status](https://ci.appveyor.com/api/projects/status/y4bp82dsx0cdosa4?svg=true)](https://ci.appveyor.com/project/ritchiecarroll/comtrade)
@@ -11,8 +11,8 @@ The Gemstone COMTRADE Library organizes all Gemstone functionality related to co
 
 This library includes helpful comtrade classes like the following:
 
-* [Class](https://gemstone.github.io/comtrade/help/html/T_gemstone_comtrade_Class.htm):
-  * Represents a comtrade class for handling comtrade operations.
+* [Parser](https://gemstone.github.io/comtrade/help/html/T_gemstone_comtrade_Parser.htm):
+  * Represents a class for parsing COMTRADE files.
 
 Among others.
 

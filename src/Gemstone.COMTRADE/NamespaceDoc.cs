@@ -28,7 +28,7 @@ namespace Gemstone.COMTRADE
     /// <summary>
     /// The <see cref="Gemstone.COMTRADE"/> namespace organizes all Gemstone library functionality
     /// related to comtrade. The root comtrade namespace also includes common comtrade classes,
-    /// e.g., <see cref="Class"/>.
+    /// e.g., <see cref="Parser"/>.
     /// </summary>
     [CompilerGenerated]
     class NamespaceDoc
