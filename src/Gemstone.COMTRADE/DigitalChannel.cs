@@ -23,10 +23,10 @@
 //
 //******************************************************************************************************
 
+
 using System;
 using System.Collections.Generic;
 using Gemstone.StringExtensions;
-
 #if NETSTANDARD
 using Newtonsoft.Json;
 #else

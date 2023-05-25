@@ -21,8 +21,8 @@
 //
 //******************************************************************************************************
 
-using System;
 
+using System;
 #if NETSTANDARD
 using Newtonsoft.Json;
 #else

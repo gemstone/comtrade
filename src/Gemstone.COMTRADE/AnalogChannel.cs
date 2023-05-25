@@ -23,13 +23,13 @@
 //
 //******************************************************************************************************
 
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Gemstone.Numeric.EE;
 using Gemstone.StringExtensions;
 using Gemstone.Units;
-
 #if NETSTANDARD
 using Newtonsoft.Json;
 #else
