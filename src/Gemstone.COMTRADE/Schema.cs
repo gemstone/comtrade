@@ -305,13 +305,9 @@ namespace Gemstone.COMTRADE
             FileType = fileType;
 
             // Parse analog definitions - we do this after knowing file type to better assign default linear scaling factors
-            List<AnalogChannel> analogChannels = new();
             bool targetFloatingPoint = fileType == FileType.Float32;
 
-            for (int i = 0; i < analogLineImages.Count; i++)
-                analogChannels.Add(new AnalogChannel(analogLineImages[i], Version, targetFloatingPoint, useRelaxedValidation));
-
-            AnalogChannels = analogChannels.ToArray();
+            AnalogChannels = analogLineImages.Select(lineImage => new AnalogChannel(lineImage, Version, targetFloatingPoint, useRelaxedValidation)).ToArray();
 
             // Parse time factor
             TimeFactor = lines.Length < lineNumber ? double.Parse(lines[lineNumber++]) : 1;
