@@ -507,10 +507,7 @@ namespace Gemstone.COMTRADE
                 if (lastLine?.Length > 0)
                     position += utf8.GetBytes(lastLine).Length + 2;
 
-                string? nextLine = fileReader.ReadLine();
-
-                if (nextLine is null)
-                    throw new InvalidOperationException("Unexpected end of configuration section");
+                string? nextLine = fileReader.ReadLine() ?? throw new InvalidOperationException("Unexpected end of configuration section");
 
                 return lastLine = nextLine;
             }
