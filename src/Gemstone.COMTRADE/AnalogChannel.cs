@@ -95,7 +95,7 @@ namespace Gemstone.COMTRADE
         /// <summary>
         /// Default multiplier for an analog value.
         /// </summary>
-        public const double DefaultAnalogMultipler = 0.04D;
+        public const double DefaultAnalogMultiplier = 0.04D;
 
         // Fields
         private readonly bool m_targetFloatingPoint;
@@ -125,7 +125,7 @@ namespace Gemstone.COMTRADE
             m_phaseDesignation = char.MinValue;
             m_signalKind = SignalKind.Analog;
             CoordinateFormat = CoordinateFormat.Polar;
-            Multiplier = targetFloatingPoint ? 1.0D : DefaultAnalogMultipler;
+            Multiplier = targetFloatingPoint ? 1.0D : DefaultAnalogMultiplier;
             Adder = 0.0D;
             m_nominalFrequency = 60.0D;
             MinValue = targetFloatingPoint ? float.MinValue : -99999;
@@ -441,7 +441,7 @@ namespace Gemstone.COMTRADE
                         Adder = 0.0D;
                         break;
                     default:
-                        Multiplier = DefaultAnalogMultipler;
+                        Multiplier = DefaultAnalogMultiplier;
                         Adder = 0.0D;
                         break;
                 }

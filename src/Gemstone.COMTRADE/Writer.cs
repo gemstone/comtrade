@@ -350,7 +350,7 @@ namespace Gemstone.COMTRADE
                                 PhaseID = string.Empty,
                                 Units = record.Units,
                                 CircuitComponent = record.CircuitComponent,
-                                Multiplier = targetFloatingPoint ? 1.0D : AnalogChannel.DefaultAnalogMultipler
+                                Multiplier = targetFloatingPoint ? 1.0D : AnalogChannel.DefaultAnalogMultiplier
                             });
                             break;
                     }
