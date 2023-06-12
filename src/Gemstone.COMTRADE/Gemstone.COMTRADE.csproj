@@ -23,9 +23,9 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <Nullable>enable</Nullable>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <Version>1.0.89</Version>
-    <InformationalVersion Condition="'$(Configuration)'=='Release'">1.0.89 -- Release Build</InformationalVersion>
-    <InformationalVersion Condition="'$(Configuration)'!='Release'">1.0.89 -- Debug Build</InformationalVersion>
+    <Version>1.0.90</Version>
+    <InformationalVersion Condition="'$(Configuration)'=='Release'">1.0.90 -- Release Build</InformationalVersion>
+    <InformationalVersion Condition="'$(Configuration)'!='Release'">1.0.90 -- Debug Build</InformationalVersion>
     <Configurations>Debug;Release;Development</Configurations>
   </PropertyGroup>
 
@@ -50,10 +50,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\common\src\Gemstone\Gemstone.Common.csproj" Condition="'$(Configuration)'=='Development'" />
-    <PackageReference Include="Gemstone.Common" Version="1.0.89" Condition="'$(Configuration)'!='Development'" />
+    <PackageReference Include="Gemstone.Common" Version="1.0.90" Condition="'$(Configuration)'!='Development'" />
 
     <ProjectReference Include="..\..\..\numeric\src\Gemstone.Numeric\Gemstone.Numeric.csproj" Condition="'$(Configuration)'=='Development'" />
-    <PackageReference Include="Gemstone.Numeric" Version="1.0.89" Condition="'$(Configuration)'!='Development'" />
+    <PackageReference Include="Gemstone.Numeric" Version="1.0.90" Condition="'$(Configuration)'!='Development'" />
 
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" Condition="$(TargetFramework)=='netstandard2.1'" />
 
