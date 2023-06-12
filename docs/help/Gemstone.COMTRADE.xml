@@ -50,7 +50,7 @@
             Gets or sets coordinate format of this <see cref="T:Gemstone.COMTRADE.AnalogChannel" />.
             </summary>
     </member>
-    <member name="F:Gemstone.COMTRADE.AnalogChannel.DefaultAnalogMultipler">
+    <member name="F:Gemstone.COMTRADE.AnalogChannel.DefaultAnalogMultiplier">
       <summary>
             Default multiplier for an analog value.
             </summary>
