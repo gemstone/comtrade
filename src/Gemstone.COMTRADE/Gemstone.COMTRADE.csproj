@@ -11,6 +11,7 @@
     <Product>Gemstone</Product>
     <PackageDescription>GPA Gemstone COMTRADE Library for parsing and creating COMTRADE (COMmon format for Transient Data Exchange for power systems) files</PackageDescription>
     <PackageIcon>gemstone-square-128.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>GPA Gemstone COMTRADE Library</Description>
     <Copyright>Copyright © 2022</Copyright>
     <PackageProjectUrl>https://github.com/gemstone</PackageProjectUrl>
@@ -42,10 +43,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\docs\README.md" Link="README.md" Visible="false">
+      <Pack>True</Pack>
+      <PackagePath />
+    </None>
     <None Include="..\..\docs\img\gemstone-square-128.png" Link="gemstone-square-128.png" Visible="false">
       <Pack>True</Pack>
       <PackagePath />
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" Condition="$(TargetFramework)=='netstandard2.1'" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,8 +63,6 @@
 
     <ProjectReference Include="..\..\..\numeric\src\Gemstone.Numeric\Gemstone.Numeric.csproj" Condition="'$(Configuration)'=='Development'" />
     <PackageReference Include="Gemstone.Numeric" Version="1.0.91" Condition="'$(Configuration)'!='Development'" />
-
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" Condition="$(TargetFramework)=='netstandard2.1'" />
 
     <!-- <ProjectReference Include="..\..\..\threading\src\Gemstone.Threading\Gemstone.Threading.csproj" Condition="'$(Configuration)'=='Development'" /> -->
     <!-- <PackageReference Include="Gemstone.Threading" Version="1.0.0" Condition="'$(Configuration)'!='Development'" /> -->
