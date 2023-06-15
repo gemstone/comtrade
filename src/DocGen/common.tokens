@@ -72,29 +72,16 @@
             <ddue:para>
               <ddue:legacyBold>
                 <ddue:externalLink>
-                  <ddue:linkText>Gemstone.Numeric</ddue:linkText>
-                  <ddue:linkAlternateText>Gemstone.Numeric</ddue:linkAlternateText>
-                  <ddue:linkUri>https://gemstone.github.io/numeric/</ddue:linkUri>
+                  <ddue:linkText>Gemstone.Configuration</ddue:linkText>
+                  <ddue:linkAlternateText>Gemstone.Configuration</ddue:linkAlternateText>
+                  <ddue:linkUri>https://gemstone.github.io/configuration/</ddue:linkUri>
                   <ddue:linkTarget>_blank</ddue:linkTarget>
                 </ddue:externalLink>               
               </ddue:legacyBold>
-              organizes all Gemstone functionality related to numeric functionality.
+              organizes all Gemstone functionality related to application configuration and settings.
             </ddue:para>
           </ddue:listItem>
           <ddue:listItem>
-            <ddue:para>
-              <ddue:legacyBold>
-                <ddue:externalLink>
-                  <ddue:linkText>Gemstone.IO</ddue:linkText>
-                  <ddue:linkAlternateText>Gemstone.IO</ddue:linkAlternateText>
-                  <ddue:linkUri>https://gemstone.github.io/io/</ddue:linkUri>
-                  <ddue:linkTarget>_blank</ddue:linkTarget>
-                </ddue:externalLink>               
-              </ddue:legacyBold>
-              organizes all Gemstone functionality related to input and output (IO).
-            </ddue:para>
-          </ddue:listItem>          
-            <ddue:listItem>
             <ddue:para>
               <ddue:legacyBold>
                 <ddue:externalLink>
@@ -104,7 +91,20 @@
                   <ddue:linkTarget>_blank</ddue:linkTarget>
                 </ddue:externalLink>               
               </ddue:legacyBold>
-              organizes all Gemstone functionality related to data.
+              organizes all Gemstone functionality related to database operations.
+            </ddue:para>
+          </ddue:listItem>
+          <ddue:listItem>
+            <ddue:para>
+              <ddue:legacyBold>
+                <ddue:externalLink>
+                  <ddue:linkText>Gemstone.Diagnostics</ddue:linkText>
+                  <ddue:linkAlternateText>Gemstone.Diagnostics</ddue:linkAlternateText>
+                  <ddue:linkUri>https://gemstone.github.io/diagnostics/</ddue:linkUri>
+                  <ddue:linkTarget>_blank</ddue:linkTarget>
+                </ddue:externalLink>               
+              </ddue:legacyBold>
+              organizes all Gemstone functionality related to application diagnostics.
             </ddue:para>
           </ddue:listItem>
           <ddue:listItem>
@@ -124,13 +124,26 @@
             <ddue:para>
               <ddue:legacyBold>
                 <ddue:externalLink>
-                  <ddue:linkText>Gemstone.Threading</ddue:linkText>
-                  <ddue:linkAlternateText>Gemstone.Threading</ddue:linkAlternateText>
-                  <ddue:linkUri>https://gemstone.github.io/threading/</ddue:linkUri>
+                  <ddue:linkText>Gemstone.IO</ddue:linkText>
+                  <ddue:linkAlternateText>Gemstone.IO</ddue:linkAlternateText>
+                  <ddue:linkUri>https://gemstone.github.io/io/</ddue:linkUri>
                   <ddue:linkTarget>_blank</ddue:linkTarget>
                 </ddue:externalLink>               
               </ddue:legacyBold>
-              organizes all Gemstone functionality related to threading.
+              organizes all Gemstone functionality related to input and output (IO).
+            </ddue:para>
+          </ddue:listItem>          
+          <ddue:listItem>
+            <ddue:para>
+              <ddue:legacyBold>
+                <ddue:externalLink>
+                  <ddue:linkText>Gemstone.Numeric</ddue:linkText>
+                  <ddue:linkAlternateText>Gemstone.Numeric</ddue:linkAlternateText>
+                  <ddue:linkUri>https://gemstone.github.io/numeric/</ddue:linkUri>
+                  <ddue:linkTarget>_blank</ddue:linkTarget>
+                </ddue:externalLink>               
+              </ddue:legacyBold>
+              organizes all Gemstone functionality related to numeric functionality.
             </ddue:para>
           </ddue:listItem>
           <ddue:listItem>
@@ -150,6 +163,45 @@
             <ddue:para>
               <ddue:legacyBold>
                 <ddue:externalLink>
+                  <ddue:linkText>Gemstone.Timeseries</ddue:linkText>
+                  <ddue:linkAlternateText>Gemstone.Timeseries</ddue:linkAlternateText>
+                  <ddue:linkUri>https://gemstone.github.io/timeseries/</ddue:linkUri>
+                  <ddue:linkTarget>_blank</ddue:linkTarget>
+                </ddue:externalLink>               
+              </ddue:legacyBold>
+              organizes all Gemstone functionality related to timeseries functionality.
+            </ddue:para>
+          </ddue:listItem>
+          <ddue:listItem>
+            <ddue:para>
+              <ddue:legacyBold>
+                <ddue:externalLink>
+                  <ddue:linkText>Gemstone.Web</ddue:linkText>
+                  <ddue:linkAlternateText>Gemstone.Web</ddue:linkAlternateText>
+                  <ddue:linkUri>https://gemstone.github.io/web/</ddue:linkUri>
+                  <ddue:linkTarget>_blank</ddue:linkTarget>
+                </ddue:externalLink>               
+              </ddue:legacyBold>
+              organizes all Gemstone functionality related to web operations.
+            </ddue:para>
+          </ddue:listItem>
+          <ddue:listItem>
+            <ddue:para>
+              <ddue:legacyBold>
+                <ddue:externalLink>
+                  <ddue:linkText>Gemstone.PhasorProtocols</ddue:linkText>
+                  <ddue:linkAlternateText>Gemstone.PhasorProtocols</ddue:linkAlternateText>
+                  <ddue:linkUri>https://gemstone.github.io/phasor-protocols/</ddue:linkUri>
+                  <ddue:linkTarget>_blank</ddue:linkTarget>
+                </ddue:externalLink>               
+              </ddue:legacyBold>
+              organizes all Gemstone functionality related to the parsing and generation of synchrophasor protocols.
+            </ddue:para>
+          </ddue:listItem>
+          <ddue:listItem>
+            <ddue:para>
+              <ddue:legacyBold>
+                <ddue:externalLink>
                   <ddue:linkText>Gemstone.PQDIF</ddue:linkText>
                   <ddue:linkAlternateText>Gemstone.PQDIF</ddue:linkAlternateText>
                   <ddue:linkUri>https://gemstone.github.io/pqdif/</ddue:linkUri>
@@ -157,6 +209,19 @@
                 </ddue:externalLink>               
               </ddue:legacyBold>
               organizes all Gemstone functionality related to the parsing of PQDIF files.
+            </ddue:para>
+          </ddue:listItem>
+          <ddue:listItem>
+            <ddue:para>
+              <ddue:legacyBold>
+                <ddue:externalLink>
+                  <ddue:linkText>Gemstone.COMTRADE</ddue:linkText>
+                  <ddue:linkAlternateText>Gemstone.COMTRADE</ddue:linkAlternateText>
+                  <ddue:linkUri>https://gemstone.github.io/comtrade/</ddue:linkUri>
+                  <ddue:linkTarget>_blank</ddue:linkTarget>
+                </ddue:externalLink>               
+              </ddue:legacyBold>
+              organizes all Gemstone functionality related to the parsing and generation of COMTRADE files.
             </ddue:para>
           </ddue:listItem>
         </ddue:list>

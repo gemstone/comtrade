@@ -3,7 +3,7 @@
 =========================================================================================================
 
 Gemstone Libraries (https://github.com/gemstone/)
-Copyright © 2019-2022, Grid Protection Alliance, Inc.
+Copyright © 2019-2023, Grid Protection Alliance, Inc.
 
 These libraries include software developed at the Grid Protection Alliance, Inc.
 (http://www.gridprotectionalliance.org/)
