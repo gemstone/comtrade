@@ -13,7 +13,7 @@
     <PackageIcon>gemstone-square-128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>GPA Gemstone COMTRADE Library</Description>
-    <Copyright>Copyright © 2022</Copyright>
+    <Copyright>Copyright © 2023</Copyright>
     <PackageProjectUrl>https://github.com/gemstone</PackageProjectUrl>
     <RepositoryUrl>https://github.com/gemstone/comtrade</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
