@@ -54,43 +54,43 @@
         <component id="API Token Resolution">{@TokenFiles}
 <replace elements="/*//token" item="string(.)" /></component>
       </ComponentConfig>
-      <ComponentConfig id="Resolve ThirdParty Reference Links" enabled="True">
-        <component id="Resolve ThirdParty Reference Links">
-          <configuration>
-            <urlProviders>
-              <formattedProvider title="Gemstone.Numeric URL Provider">
-                <targetMatcher pattern=".:Gemstone\.Numeric\..+"  ="false" />
-                <targetFormatter>
-                  <steps>
-                    <replace pattern="T:" with="T_" />
-                    <replace pattern="E:" with="E_" />
-                    <replace pattern="M:" with="M_" />
-                    <replace pattern="P:" with="P_" />
-                    <replace pattern="\." with="_" />
-                  </steps>
-                </targetFormatter>
-                <urlFormatter format="https://gemstone.github.io/numeric/help/html/{target}.htm" target="_self" />
-              </formattedProvider>
-              <!-- Add Gemstone root namespace last because it has the widest match criteria -->
-              <!-- Pattern excludes target namespace so local memmbers are not redirected to common -->
-              <formattedProvider title="Gemstone Common URL Provider">
-                <targetMatcher pattern=".:Gemstone\.(?!COMTRADE\.)..+" fullyQualifiedMemberName="false" />
-                <targetFormatter>
-                  <steps>
-                    <replace pattern="T:" with="T_" />
-                    <replace pattern="E:" with="E_" />
-                    <replace pattern="M:" with="M_" />
-                    <replace pattern="P:" with="P_" />
-                    <replace pattern="\." with="_" />
-                  </steps>
-                </targetFormatter>
-                <urlFormatter format="https://gemstone.github.io/common/help/html/{target}.htm" target="_self" />
-              </formattedProvider>
-            </urlProviders>
-          </configuration>
-        </component>
-      </ComponentConfig>
-      <ComponentConfig id="IntelliSense Component" enabled="True">
+        <ComponentConfig id="Resolve ThirdParty Reference Links" enabled="True">
+            <component id="Resolve ThirdParty Reference Links">
+                <configuration>
+                    <urlProviders>
+                        <formattedProvider title="Gemstone.Numeric URL Provider">
+                            <targetMatcher pattern=".:Gemstone\.Numeric\..+" fullyQualifiedMemberName="false" />
+                            <targetFormatter>
+                                <steps>
+                                    <replace pattern="T:" with="T_" />
+                                    <replace pattern="E:" with="E_" />
+                                    <replace pattern="M:" with="M_" />
+                                    <replace pattern="P:" with="P_" />
+                                    <replace pattern="\." with="_" />
+                                </steps>
+                            </targetFormatter>
+                            <urlFormatter format="https://gemstone.github.io/numeric/help/html/{target}.htm" target="_self" />
+                        </formattedProvider>
+                        <!-- Add Gemstone root namespace last because it has the widest match criteria -->
+                        <!-- Pattern excludes target namespace so local memmbers are not redirected to common -->
+                        <formattedProvider title="Gemstone Common URL Provider">
+                            <targetMatcher pattern=".:Gemstone\.(?!COMTRADE\.)..+" fullyQualifiedMemberName="false" />
+                            <targetFormatter>
+                                <steps>
+                                    <replace pattern="T:" with="T_" />
+                                    <replace pattern="E:" with="E_" />
+                                    <replace pattern="M:" with="M_" />
+                                    <replace pattern="P:" with="P_" />
+                                    <replace pattern="\." with="_" />
+                                </steps>
+                            </targetFormatter>
+                            <urlFormatter format="https://gemstone.github.io/common/help/html/{target}.htm" target="_self" />
+                        </formattedProvider>
+                    </urlProviders>
+                </configuration>
+            </component>
+        </ComponentConfig>
+        <ComponentConfig id="IntelliSense Component" enabled="True">
         <component id="IntelliSense Component">
           <output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}" boundedCapacity="100" />
         </component>
