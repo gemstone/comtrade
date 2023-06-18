@@ -61,23 +61,13 @@
                 <configuration>
                     <urlProviders>
                         <formattedProvider title="Gemstone.Numeric URL Provider">
-                            <targetMatcher pattern=".:Gemstone\.Numeric(\.|$).*" fullyQualifiedMemberName="false" />
-                            <targetFormatter>
-                                <steps>
-                                    <replace pattern=":|\.|`" with="_" />
-                                </steps>
-                            </targetFormatter>
+                            <targetMatcher pattern=".:Gemstone\.Numeric(\.|$).*" fullyQualifiedMemberName="false" sandcastleTarget="true" />
                             <urlFormatter format="https://gemstone.github.io/numeric/help/html/{target}.htm" target="_self" />
                         </formattedProvider>
                         <!-- Add Gemstone root namespace last because it has the widest match criteria -->
                         <!-- Pattern excludes target namespace so local memmbers are not redirected to common -->
                         <formattedProvider title="Gemstone Common URL Provider">
-                            <targetMatcher pattern=".:Gemstone\.(?!COMTRADE(\.|$)).*" fullyQualifiedMemberName="false" />
-                            <targetFormatter>
-                                <steps>
-                                    <replace pattern=":|\.|`" with="_" />
-                                </steps>
-                            </targetFormatter>
+                            <targetMatcher pattern=".:Gemstone\.(?!COMTRADE(\.|$)).*" fullyQualifiedMemberName="false" sandcastleTarget="true" />
                             <urlFormatter format="https://gemstone.github.io/common/help/html/{target}.htm" target="_self" />
                         </formattedProvider>
                     </urlProviders>
