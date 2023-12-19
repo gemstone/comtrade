@@ -3,7 +3,7 @@
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>net7.0;netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>net8.0;netstandard2.1</TargetFrameworks>
     <RootNamespace>Gemstone.COMTRADE</RootNamespace>
     <PackageId>Gemstone.COMTRADE</PackageId>
     <Authors>Grid Protection Alliance</Authors>
@@ -54,7 +54,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" Condition="$(TargetFramework)=='netstandard2.1'" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" Condition="$(TargetFramework)=='netstandard2.1'" />
   </ItemGroup>
 
   <ItemGroup>
