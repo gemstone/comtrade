@@ -248,7 +248,7 @@ namespace Gemstone.COMTRADE
             DeviceID = parts[1].Trim();
 
             if (parts.Length >= 3 && !string.IsNullOrWhiteSpace(parts[2]))
-                Version = int.Parse(parts[2].Trim());
+                Version = int.Parse(parts[2].Trim(), CultureInfo.InvariantCulture);
             else
                 Version = 1991;
 
@@ -258,9 +258,9 @@ namespace Gemstone.COMTRADE
             if (parts.Length < 3 || (!useRelaxedValidation && parts.Length != 3))
                 throw new InvalidOperationException($"Unexpected number of line image elements for second configuration file line: {parts.Length} - expected 3{Environment.NewLine}Image = {lines[lineNumber - 1]}");
 
-            int totalChannels = int.Parse(parts[0].Trim());
-            int totalAnalogChannels = int.Parse(parts[1].Trim().Split('A')[0]);
-            int totalDigitalChannels = int.Parse(parts[2].Trim().Split('D')[0]);
+            int totalChannels = int.Parse(parts[0].Trim(), CultureInfo.InvariantCulture);
+            int totalAnalogChannels = int.Parse(parts[1].Trim().Split('A')[0], CultureInfo.InvariantCulture);
+            int totalDigitalChannels = int.Parse(parts[2].Trim().Split('D')[0], CultureInfo.InvariantCulture);
 
             if (totalChannels != totalAnalogChannels + totalDigitalChannels)
                 throw new InvalidOperationException($"Total defined channels must equal the sum of the total number of analog and digital channel definitions.{Environment.NewLine}Image = {lines[lineNumber - 1]}");
@@ -280,10 +280,10 @@ namespace Gemstone.COMTRADE
             DigitalChannels = digitalChannels.ToArray();
 
             // Parse line frequency
-            NominalFrequency = double.Parse(lines[lineNumber++]);
+            NominalFrequency = double.Parse(lines[lineNumber++], CultureInfo.InvariantCulture);
 
             // Parse total number of sample rates
-            int totalSampleRates = int.Parse(lines[lineNumber++]);
+            int totalSampleRates = int.Parse(lines[lineNumber++], CultureInfo.InvariantCulture);
 
             if (totalSampleRates == 0)
                 totalSampleRates = 1;
@@ -310,7 +310,7 @@ namespace Gemstone.COMTRADE
             AnalogChannels = analogLineImages.Select(lineImage => new AnalogChannel(lineImage, Version, targetFloatingPoint, useRelaxedValidation)).ToArray();
 
             // Parse time factor
-            TimeFactor = lineNumber < lines.Length ? double.Parse(lines[lineNumber++]) : 1;
+            TimeFactor = lineNumber < lines.Length ? double.Parse(lines[lineNumber++], CultureInfo.InvariantCulture) : 1;
 
             // Parse time information line
             if (lineNumber < lines.Length)
@@ -339,10 +339,10 @@ namespace Gemstone.COMTRADE
                 parts = lines[lineNumber/*++*/].Split(',');
 
                 if (parts.Length > 0)
-                    TimeQualityIndicatorCode = (TimeQualityIndicatorCode)byte.Parse(parts[0], NumberStyles.HexNumber);
+                    TimeQualityIndicatorCode = (TimeQualityIndicatorCode)byte.Parse(parts[0], NumberStyles.HexNumber, CultureInfo.InvariantCulture);
 
                 if (parts.Length > 1)
-                    LeapSecondIndicator = (LeapSecondIndicator)byte.Parse(parts[1]);
+                    LeapSecondIndicator = (LeapSecondIndicator)byte.Parse(parts[1], CultureInfo.InvariantCulture);
             }
         }
 
@@ -523,11 +523,11 @@ namespace Gemstone.COMTRADE
             {
                 StringBuilder fileImage = new();
 
-                void appendLine(string line)
+                void appendLine(FormattableString line)
                 {
                     // The standard .NET "Environment.NewLine" constant can just be a line feed on some operating systems,
                     // but the COMTRADE standard requires that end of line markers be both a carriage return and line feed.
-                    fileImage.Append(line);
+                    fileImage.Append(line.ToString(CultureInfo.InvariantCulture));
                     fileImage.Append(Writer.CRLF);
                 }
 
@@ -539,17 +539,17 @@ namespace Gemstone.COMTRADE
 
                 // Write analog definitions
                 for (int i = 0; i < TotalAnalogChannels; i++)
-                    appendLine(AnalogChannels![i].ToString());
+                    appendLine($"{AnalogChannels![i]}");
 
                 // Write digital definitions
                 for (int i = 0; i < TotalDigitalChannels; i++)
-                    appendLine(DigitalChannels![i].ToString());
+                    appendLine($"{DigitalChannels![i]}");
 
                 // Write line frequency
-                appendLine(NominalFrequency.ToString(CultureInfo.InvariantCulture));
+                appendLine($"{NominalFrequency}");
 
                 // Write total number of sample rates (zero signifies no fixed sample rates)
-                appendLine(TotalSampleRates.ToString());
+                appendLine($"{TotalSampleRates}");
 
                 int totalSampleRates = TotalSampleRates;
 
@@ -558,18 +558,18 @@ namespace Gemstone.COMTRADE
 
                 // Write sample rates
                 for (int i = 0; i < totalSampleRates; i++)
-                    appendLine(SampleRates![i].ToString());
+                    appendLine($"{SampleRates![i]}");
 
                 // Write timestamps
-                appendLine(StartTime.ToString());
-                appendLine(TriggerTime.ToString());
+                appendLine($"{StartTime}");
+                appendLine($"{TriggerTime}");
 
                 // Write file type
-                appendLine(FileType.ToString().ToUpper());
+                appendLine($"{FileType.ToString().ToUpper()}");
 
                 // Write time factor
                 if (Version >= 1999)
-                    appendLine(TimeFactor.ToString(CultureInfo.InvariantCulture));
+                    appendLine($"{TimeFactor}");
 
                 // Write per data set time info and state
                 if (Version >= 2013)

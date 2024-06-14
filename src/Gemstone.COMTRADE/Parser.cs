@@ -24,6 +24,7 @@
 //******************************************************************************************************
 
 using System;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -402,7 +403,7 @@ namespace Gemstone.COMTRADE
             }
 
             // Parse row of data
-            uint sample = uint.Parse(elems[0]);
+            uint sample = uint.Parse(elems[0], CultureInfo.InvariantCulture);
 
             // Capture initial sample index - this handles cases where sample index does not start at zero
             if (m_initialSample == uint.MaxValue)
@@ -426,7 +427,7 @@ namespace Gemstone.COMTRADE
 
             // Fall back on specified microsecond time
             if (Timestamp == DateTime.MinValue)
-                Timestamp = new DateTime(Ticks.FromMicroseconds(double.Parse(elems[1]) * m_schema!.TimeFactor) + m_schema.StartTime.Value);
+                Timestamp = new DateTime(Ticks.FromMicroseconds(double.Parse(elems[1], CultureInfo.InvariantCulture) * m_schema!.TimeFactor) + m_schema.StartTime.Value);
 
             // Apply timestamp offset to restore UTC timezone
             if (AdjustToUTC)
@@ -438,7 +439,7 @@ namespace Gemstone.COMTRADE
             // Parse all record values
             for (int i = 0; i < Values.Length; i++)
             {
-                Values[i] = double.Parse(elems[i + 2]);
+                Values[i] = double.Parse(elems[i + 2], CultureInfo.InvariantCulture);
 
                 if (i < m_schema!.AnalogChannels?.Length)
                     Values[i] = AdjustValue(Values[i], i);

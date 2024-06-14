@@ -26,6 +26,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using Gemstone.StringExtensions;
 #if NETSTANDARD
 using Newtonsoft.Json;
@@ -79,7 +80,7 @@ namespace Gemstone.COMTRADE
 
             if (parts.Length >= 5)
             {
-                Index = int.Parse(parts[0].Trim());
+                Index = int.Parse(parts[0].Trim(), CultureInfo.InvariantCulture);
                 Name = parts[1];
                 PhaseID = parts[2];
                 CircuitComponent = parts[3];
@@ -87,7 +88,7 @@ namespace Gemstone.COMTRADE
             }
             else
             {
-                Index = int.Parse(parts[0].Trim());
+                Index = int.Parse(parts[0].Trim(), CultureInfo.InvariantCulture);
                 Name = parts[1];
                 NormalState = parts[2].Trim().ParseBoolean();
             }
@@ -203,7 +204,7 @@ namespace Gemstone.COMTRADE
                 // Dn,ch_id,ph,ccbm,y
                 values = new List<string>
                 {
-                    Index.ToString(),
+                    Index.ToString(CultureInfo.InvariantCulture),
                     Name ?? string.Empty,
                     PhaseID ?? string.Empty,
                     CircuitComponent ?? string.Empty,
@@ -215,7 +216,7 @@ namespace Gemstone.COMTRADE
                 // Dn,ch_id,y
                 values = new List<string>
                 {
-                    Index.ToString(),
+                    Index.ToString(CultureInfo.InvariantCulture),
                     Name ?? string.Empty,
                     NormalState ? "1" : "0"
                 };
