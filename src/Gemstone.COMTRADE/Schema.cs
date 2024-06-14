@@ -310,12 +310,21 @@ namespace Gemstone.COMTRADE
             AnalogChannels = analogLineImages.Select(lineImage => new AnalogChannel(lineImage, Version, targetFloatingPoint, useRelaxedValidation)).ToArray();
 
             // Parse time factor
-            TimeFactor = lines.Length < lineNumber ? double.Parse(lines[lineNumber++]) : 1;
+            TimeFactor = lineNumber < lines.Length ? double.Parse(lines[lineNumber++]) : 1;
 
             // Parse time information line
-            if (lines.Length < lineNumber)
+            if (lineNumber < lines.Length)
             {
                 parts = lines[lineNumber++].Split(',');
+
+                string timeCode = parts[0].Trim();
+                string localCode = parts[1].Trim();
+
+                if (useRelaxedValidation && timeCode.EndsWith("t"))
+                    timeCode = timeCode.Substring(0, timeCode.Length - 1);
+
+                if (useRelaxedValidation && localCode.EndsWith("t"))
+                    localCode = localCode.Substring(0, localCode.Length - 1);
 
                 if (parts.Length > 0)
                     TimeCode = new TimeOffset(parts[0].Trim());
@@ -325,7 +334,7 @@ namespace Gemstone.COMTRADE
             }
 
             // Parse time state line
-            if (lines.Length < lineNumber)
+            if (lineNumber < lines.Length)
             {
                 parts = lines[lineNumber/*++*/].Split(',');
 
