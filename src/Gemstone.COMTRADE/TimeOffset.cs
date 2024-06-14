@@ -23,6 +23,8 @@
 
 
 using System;
+using System.Globalization;
+
 #if NETSTANDARD
 using Newtonsoft.Json;
 #else
@@ -76,14 +78,14 @@ namespace Gemstone.COMTRADE
                 switch (parts.Length)
                 {
                     case 1:
-                        validFormat = int.TryParse(lineImage, out hours);
+                        validFormat = int.TryParse(lineImage, NumberStyles.Integer, CultureInfo.InvariantCulture, out hours);
                         break;
                     case 2:
                     {
-                        validFormat = int.TryParse(parts[0], out hours);
+                        validFormat = int.TryParse(parts[0], NumberStyles.Integer, CultureInfo.InvariantCulture, out hours);
 
                         if (validFormat)
-                            validFormat = int.TryParse(parts[1], out minutes);
+                            validFormat = int.TryParse(parts[1], NumberStyles.Integer, CultureInfo.InvariantCulture, out minutes);
                         break;
                     }
                     default:
@@ -167,7 +169,15 @@ namespace Gemstone.COMTRADE
         /// Converts <see cref="TimeOffset"/> to its string format.
         /// </summary>
         public override string ToString() => 
-            NotApplicable ? "x" : $"{Hours}h{Minutes:00}";
+            NotApplicable ? "x" : Format($"{Hours}h{Minutes:00}");
+
+        #endregion
+
+        #region [ Static ]
+
+        // Static Methods
+        private static string Format(FormattableString formattableString) =>
+            formattableString.ToString(CultureInfo.InvariantCulture);
 
         #endregion
     }

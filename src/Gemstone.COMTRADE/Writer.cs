@@ -46,7 +46,7 @@ namespace Gemstone.COMTRADE
         /// </remarks>
         public const long MaxFileSize = 281474976710656L;
 
-        private static readonly string s_maxByteCountString = new('0', $"{MaxFileSize}".Length);
+        private static readonly string s_maxByteCountString = new('0', MaxFileSize.ToString(CultureInfo.InvariantCulture).Length);
 
         /// <summary>
         /// Defines the maximum COMTRADE end sample number.
@@ -527,8 +527,8 @@ namespace Gemstone.COMTRADE
             if (parts.Length < 3)
                 throw new InvalidOperationException($"Unexpected number of line image elements for second configuration file line: {parts.Length} - expected 3{Environment.NewLine}Image = {line}");
 
-            int totalAnalogChannels = int.Parse(parts[1].Trim().Split('A')[0]);
-            int totalDigitalChannels = int.Parse(parts[2].Trim().Split('D')[0]);
+            int totalAnalogChannels = int.Parse(parts[1].Trim().Split('A')[0], CultureInfo.InvariantCulture);
+            int totalDigitalChannels = int.Parse(parts[2].Trim().Split('D')[0], CultureInfo.InvariantCulture);
 
             // Skip analog definitions
             for (int i = 0; i < totalAnalogChannels; i++)
@@ -542,7 +542,7 @@ namespace Gemstone.COMTRADE
             readLine();
 
             // Parse total number of sample rates
-            int totalSampleRates = int.Parse(readLine());
+            int totalSampleRates = int.Parse(readLine(), CultureInfo.InvariantCulture);
 
             if (totalSampleRates == 0)
                 totalSampleRates = 1;
@@ -629,9 +629,10 @@ namespace Gemstone.COMTRADE
             StringBuilder line = new();
             bool isFirstDigital = true;
 
-            line.Append(sample);
-            line.Append(',');
-            line.Append(microseconds);
+            void append(FormattableString formattableString) =>
+                line.Append(formattableString.ToString(CultureInfo.InvariantCulture));
+
+            append($"{sample},{microseconds}");
 
             for (int i = 0; i < values.Length; i++)
             {
@@ -642,8 +643,7 @@ namespace Gemstone.COMTRADE
                     value -= schema.AnalogChannels[i].Adder;
                     value /= schema.AnalogChannels[i].Multiplier;
 
-                    line.Append(',');
-                    line.Append(value.ToString(CultureInfo.InvariantCulture));
+                    append($",{value}");
                 }
                 else
                 {
@@ -656,8 +656,8 @@ namespace Gemstone.COMTRADE
                         {
                             for (int j = 0; j < 16; j++)
                             {
-                                line.Append(',');
-                                line.Append(fracSecValue.CheckBits(BitOps.BitVal(j)) ? 1 : 0);
+                                int fracSecBit = fracSecValue.CheckBits(BitOps.BitVal(j)) ? 1 : 0;
+                                append($",{fracSecBit}");
                             }
                         }
                     }
@@ -666,8 +666,8 @@ namespace Gemstone.COMTRADE
 
                     for (int j = 0; j < 16; j++)
                     {
-                        line.Append(',');
-                        line.Append(digitalWord.CheckBits(BitOps.BitVal(j)) ? 1 : 0);
+                        int digitalValue = digitalWord.CheckBits(BitOps.BitVal(j)) ? 1 : 0;
+                        append($",{digitalValue}");
                     }
                 }
             }
@@ -677,8 +677,8 @@ namespace Gemstone.COMTRADE
             {
                 for (int j = 0; j < 16; j++)
                 {
-                    line.Append(',');
-                    line.Append(fracSecValue.CheckBits(BitOps.BitVal(j)) ? 1 : 0);
+                    int fracSecBit = fracSecValue.CheckBits(BitOps.BitVal(j)) ? 1 : 0;
+                    append($",{fracSecBit}");
                 }
             }
 

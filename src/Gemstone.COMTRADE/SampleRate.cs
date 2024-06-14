@@ -64,8 +64,8 @@ namespace Gemstone.COMTRADE
             if (parts.Length < 2 || (!useRelaxedValidation && parts.Length != 2))
                 throw new InvalidOperationException($"Unexpected number of line image elements for sample rate definition: {parts.Length} - expected 2{Environment.NewLine}Image = {lineImage}");
 
-            Rate = double.Parse(parts[0].Trim());
-            EndSample = long.Parse(parts[1].Trim());
+            Rate = double.Parse(parts[0].Trim(), CultureInfo.InvariantCulture);
+            EndSample = long.Parse(parts[1].Trim(), CultureInfo.InvariantCulture);
         }
 
         #endregion
@@ -76,7 +76,15 @@ namespace Gemstone.COMTRADE
         /// Converts <see cref="SampleRate"/> to its string format.
         /// </summary>
         public override string ToString() => // samp,endsamp
-            $"{Rate.ToString(CultureInfo.InvariantCulture)},{EndSample}";
+            Format($"{Rate},{EndSample}");
+
+        #endregion
+
+        #region [ Static ]
+
+        // Static Methods
+        private static string Format(FormattableString formattableString) =>
+            formattableString.ToString(CultureInfo.InvariantCulture);
 
         #endregion
     }
