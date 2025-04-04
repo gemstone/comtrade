@@ -732,7 +732,7 @@ namespace Gemstone.COMTRADE
                         output.Write(LittleEndian.GetBytes(fracSecValue), 0, 2);
                 }
 
-                output.Write(LittleEndian.GetBytes((ushort)value), 0, 2); // 16-bit binary integer values
+                output.Write(LittleEndian.GetBytes((short)value), 0, 2); // 16-bit binary integer values
             }
 
             // Make sure FRACSEC values are injected
@@ -778,7 +778,7 @@ namespace Gemstone.COMTRADE
                     value -= schema.AnalogChannels[i].Adder;
                     value /= schema.AnalogChannels[i].Multiplier;
 
-                    output.Write(LittleEndian.GetBytes((uint)value), 0, 4); // 32-bit binary integer values
+                    output.Write(LittleEndian.GetBytes((int)value), 0, 4); // 32-bit binary integer values
                 }
                 else
                 {
