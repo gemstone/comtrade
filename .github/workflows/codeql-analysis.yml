@@ -17,6 +17,7 @@ jobs:
     permissions:
       contents: read
       security-events: write
+      packages: read
 
     env:
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
@@ -38,6 +39,39 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '9.0.x'
+          source-url: https://nuget.pkg.github.com/Gemstone/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+        # Setup CodeQL to restore Gemstone packages from GitHub Packages,
+        # this way the packages are immediately available for analysis.
+      - name: Write NuGet.config with sources, creds, and mapping
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cat > NuGet.config <<EOF
+          <?xml version="1.0" encoding="utf-8"?>
+          <configuration>
+            <packageSources>
+              <add key="github" value="https://nuget.pkg.github.com/Gemstone/index.json" />
+              <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+            </packageSources>
+            <packageSourceCredentials>
+              <github>
+                <add key="Username" value="${GITHUB_ACTOR}" />
+                <add key="ClearTextPassword" value="${NUGET_AUTH_TOKEN}" />
+              </github>
+            </packageSourceCredentials>
+            <packageSourceMapping>
+              <packageSource key="github">
+                <package pattern="Gemstone.*" />
+              </packageSource>
+              <packageSource key="nuget.org">
+                <package pattern="*" />
+              </packageSource>
+            </packageSourceMapping>
+          </configuration>
+          EOF
 
       - name: Pin SDK via global.json
         run: echo '{"sdk":{"version":"${{ steps.setup-dotnet.outputs.dotnet-version }}"}}' > global.json
@@ -55,10 +89,10 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           build-mode: manual
-          # queries: security-and-quality   # optional
+          queries: security-and-quality
 
       - name: Restore
-        run: dotnet restore ./src/Gemstone.COMTRADE/Gemstone.COMTRADE.csproj
+        run: dotnet restore ./src/Gemstone.COMTRADE/Gemstone.COMTRADE.csproj --configfile NuGet.config
 
       - name: Build
         run: dotnet build -c Release ./src/Gemstone.COMTRADE/Gemstone.COMTRADE.csproj --no-restore
