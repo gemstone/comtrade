@@ -58,7 +58,7 @@ jobs:
           # queries: security-and-quality   # optional
 
       - name: Restore
-        run: dotnet restore ./src/Gemstone.COMTRADE/Gemstone.CONTRADE.csproj
+        run: dotnet restore ./src/Gemstone.COMTRADE/Gemstone.COMTRADE.csproj
 
       - name: Build
         run: dotnet build -c Release ./src/Gemstone.COMTRADE/Gemstone.COMTRADE.csproj --no-restore
