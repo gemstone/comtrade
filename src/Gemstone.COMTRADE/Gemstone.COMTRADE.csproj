@@ -24,9 +24,9 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <Nullable>enable</Nullable>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <Version>1.0.144</Version>
-    <InformationalVersion Condition="'$(Configuration)'=='Release'">1.0.144 -- Release Build</InformationalVersion>
-    <InformationalVersion Condition="'$(Configuration)'!='Release'">1.0.144 -- Debug Build</InformationalVersion>
+    <Version>1.0.145</Version>
+    <InformationalVersion Condition="'$(Configuration)'=='Release'">1.0.145 -- Release Build</InformationalVersion>
+    <InformationalVersion Condition="'$(Configuration)'!='Release'">1.0.145 -- Debug Build</InformationalVersion>
     <Configurations>Debug;Release;Development</Configurations>
   </PropertyGroup>
 
@@ -59,10 +59,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\common\src\Gemstone\Gemstone.Common.csproj" Condition="'$(Configuration)'=='Development'" />
-    <PackageReference Include="Gemstone.Common" Version="1.0.144" Condition="'$(Configuration)'!='Development'" />
+    <PackageReference Include="Gemstone.Common" Version="1.0.145" Condition="'$(Configuration)'!='Development'" />
 
     <ProjectReference Include="..\..\..\numeric\src\Gemstone.Numeric\Gemstone.Numeric.csproj" Condition="'$(Configuration)'=='Development'" />
-    <PackageReference Include="Gemstone.Numeric" Version="1.0.144" Condition="'$(Configuration)'!='Development'" />
+    <PackageReference Include="Gemstone.Numeric" Version="1.0.145" Condition="'$(Configuration)'!='Development'" />
 
     <!-- <ProjectReference Include="..\..\..\threading\src\Gemstone.Threading\Gemstone.Threading.csproj" Condition="'$(Configuration)'=='Development'" /> -->
     <!-- <PackageReference Include="Gemstone.Threading" Version="1.0.0" Condition="'$(Configuration)'!='Development'" /> -->
