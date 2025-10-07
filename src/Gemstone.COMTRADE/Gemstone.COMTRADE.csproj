@@ -28,6 +28,7 @@
     <InformationalVersion Condition="'$(Configuration)'=='Release'">1.0.146 -- Release Build</InformationalVersion>
     <InformationalVersion Condition="'$(Configuration)'!='Release'">1.0.146 -- Debug Build</InformationalVersion>
     <Configurations>Debug;Release;Development</Configurations>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
 
   <PropertyGroup>
